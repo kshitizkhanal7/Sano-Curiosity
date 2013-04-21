@@ -1,0 +1,53 @@
+//random motion
+
+void setup(){
+  pinMode (2, OUTPUT); //+ of rt dc motor
+  pinMode (4, OUTPUT); //- of rt dc motor
+  pinMode (6, OUTPUT); //+ of lt dc motor
+  pinMode (8, OUTPUT); //- of lt dc motor
+  //pinMode (6, OUTPUT);
+}
+void loop()
+{
+  backward();   //backward motion
+ 
+  rtturn();
+  
+  forward();
+  
+  ltturn();
+  
+  backward();
+}
+
+int forward(){
+  digitalWrite(2,HIGH);
+  digitalWrite(4,LOW);
+  digitalWrite(6,HIGH);
+  digitalWrite(8,LOW);
+  delay(1000);
+ 
+ }
+int backward(){
+  digitalWrite(2,LOW);
+  digitalWrite(4,HIGH);
+  digitalWrite(6,LOW);
+  digitalWrite(8,HIGH);
+  delay(1000);
+ 
+}
+int rtturn(){
+ digitalWrite(2,HIGH);
+  digitalWrite(4,LOW);
+  digitalWrite(6,LOW);
+  digitalWrite(8,HIGH);
+  delay(1000);
+}
+
+int ltturn(){
+ digitalWrite(2,LOW);
+  digitalWrite(4,HIGH);
+  digitalWrite(6,HIGH);
+  digitalWrite(8,LOW);
+  delay(1000);
+}
